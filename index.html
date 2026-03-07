@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Under Maintenance — BU USC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0f1e;
+      color: #e8eaf0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Animated background blobs */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.25;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+
+    .blob-1 {
+      width: 520px;
+      height: 520px;
+      background: #7c3aed;
+      top: -120px;
+      left: -120px;
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      width: 400px;
+      height: 400px;
+      background: #1d4ed8;
+      bottom: -100px;
+      right: -80px;
+      animation-delay: -4s;
+    }
+
+    .blob-3 {
+      width: 300px;
+      height: 300px;
+      background: #0ea5e9;
+      top: 50%;
+      left: 55%;
+      animation-delay: -8s;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    /* Card */
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 56px 48px;
+      max-width: 580px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Gear icon */
+    .icon-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #7c3aed, #1d4ed8);
+      border-radius: 50%;
+      margin-bottom: 28px;
+      animation: spin-slow 8s linear infinite;
+    }
+
+    .icon-wrap svg {
+      width: 40px;
+      height: 40px;
+      fill: #fff;
+    }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* University label */
+    .university {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #818cf8;
+      margin-bottom: 12px;
+    }
+
+    /* Main heading */
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #c4b5fd, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Divider */
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, #7c3aed, #1d4ed8);
+      border-radius: 99px;
+      margin: 0 auto 20px;
+    }
+
+    /* Message */
+    p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    /* Status pill */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(124, 58, 237, 0.15);
+      border: 1px solid rgba(124, 58, 237, 0.35);
+      border-radius: 99px;
+      padding: 8px 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #a78bfa;
+      letter-spacing: 0.5px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #a78bfa;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      font-size: 0.75rem;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="card">
+    <div class="icon-wrap">
+      <!-- Gear SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.92c.04-.34.07-.68.07-1.08s-.03-.74-.07-1.08l2.32-1.84c.21-.15.27-.43.13-.65l-2.2-3.82c-.13-.22-.42-.3-.64-.22l-2.74 1.1c-.57-.44-1.18-.81-1.86-1.08l-.42-2.9C14.3 2.18 14.04 2 13.78 2H10.22c-.26 0-.52.18-.57.42l-.42 2.9c-.68.27-1.29.64-1.86 1.08l-2.74-1.1c-.22-.09-.51 0-.64.22L1.79 9.34c-.14.22-.07.5.13.65L4.24 11.83c-.04.34-.07.69-.07 1.09s.03.74.07 1.08l-2.32 1.84c-.21.15-.27.43-.13.65l2.2 3.82c.13.22.42.3.64.22l2.74-1.1c.57.44 1.18.81 1.86 1.08l.42 2.9c.05.24.31.42.57.42h3.56c.26 0 .52-.18.57-.42l.42-2.9c.68-.27 1.29-.64 1.86-1.08l2.74 1.1c.22.09.51 0 .64-.22l2.2-3.82c.14-.22.07-.5-.13-.65l-2.32-1.84z"/>
+      </svg>
+    </div>
+
+    <div class="university">Bicol University</div>
+
+    <h1>University Student Council</h1>
+
+    <div class="divider"></div>
+
+    <p>
+      Our website is currently undergoing scheduled maintenance.<br/>
+      We'll be back shortly. Thank you for your patience.
+    </p>
+
+    <div class="status">
+      <span class="dot"></span>
+      Under Maintenance
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Bicol University — University Student Council. All rights reserved.
+    </div>
+  </div>
+
+</body>
+</html>
