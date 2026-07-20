@@ -215,7 +215,7 @@
 
     <div style="background: rgba(29, 78, 216, 0.15); border: 1px solid rgba(29, 78, 216, 0.35); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
       <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #60a5fa; margin-bottom: 6px;">Expected Return</div>
-      <div style="font-size: 1rem; font-weight: 600; color: #e8eaf0;">April, 2026</div>
+      <div id="return-date" style="font-size: 1rem; font-weight: 600; color: #e8eaf0;"></div>
     </div>
 
     <div class="status">
@@ -228,5 +228,11 @@
     </div>
   </div>
 
+  <script>
+    const d = new Date();
+    d.setMonth(d.getMonth() + 1);
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('return-date').textContent = months[d.getMonth()] + ', ' + d.getFullYear();
+  </script>
 </body>
 </html>
